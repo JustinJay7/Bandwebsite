@@ -1,0 +1,98 @@
+body {
+    background-color: #0a0a1a;
+    color: #e0e0e0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.navbar-brand {
+    color: #4a8cff !important;
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.navbar-nav .nav-link {
+    color: #b0b0b0 !important;
+    transition: color 0.3s;
+}
+
+.navbar-nav .nav-link:hover {
+    color: #4a8cff !important;
+}
+
+.card {
+    background-color: #616177;
+    border: 1px solid #616177;
+    border-radius: 8px;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(4, 6, 11, 0.2);
+}
+
+.card-title {
+    color: #4a8cff;
+}
+
+.btn-primary {
+    background-color: #4a8cff;
+    border-color: #4a8cff;
+}
+
+.btn-primary:hover {
+    background-color: #3a7cdf;
+    border-color: #3a7cdf;
+}
+
+.hero-section {
+    background: linear-gradient(rgba(194, 234, 209, 0.38), rgba(63, 114, 98, 0.8)), 
+                url('https://as2.ftcdn.net/jpg/01/37/86/09/1000_F_137860987_l1ifzqaBpSHLkARFF5v2GEbibK6tEfgp.jpg') no-repeat center center;
+    background-size: cover;
+    padding: auto;
+    text-align: center;
+    border-radius: 10px;
+    margin-bottom: 30px;
+}
+
+.member-card {
+    text-align: center;
+    padding: 20px;
+}
+
+.member-image {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 15px;
+    border: 3px solid #4a8cff;
+}
+
+.album-cover {
+    width: 100%;
+    border-radius: 8px;
+    margin-bottom: 15px;
+}
+
+.footer {
+    min-height: 100vh;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    flex-shrink: 0;
+    background-color: #343a40;
+    color: #fff;
+    text-align: center;
+    padding:0;
+}
+
+.wrapper {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+card-body  {
+    text-align: center;
+    background-image: url('https://as2.ftcdn.net/jpg/01/37/86/09/1000_F_137860987_l1ifzqaBpSHLkARFF5v2GEbibK6tEfgp.jpg');
+    background-size: cover;
+}

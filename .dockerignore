@@ -1,0 +1,72 @@
+# =====================================
+# Python / Django common ignores
+# =====================================
+__pycache__/
+*.py[cod]
+*.pyc
+*.pyo
+*.pyd
+.Python
+*.sqlite3
+*.sqlite3-journal
+db.sqlite3
+db.sqlite3-journal
+
+# Virtual environments
+.venv/
+venv/
+ENV/
+env/
+env.bak/
+venv.bak/
+
+# Environment / secrets
+.env
+.env.*
+*.env
+.env.local
+.env.development
+.env.production
+
+# Development & testing
+.coverage
+.coverage.*
+htmlcov/
+.pytest_cache/
+.tox/
+.nox/
+.hypothesis/
+.cache/
+*.log
+*.logs
+logs/
+coverage.xml
+*.cover
+
+# Git & version control
+.git
+.gitignore
+.gitattributes
+
+# Editor / IDE files
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Local static/media (usually collected in container anyway)
+staticfiles/
+media/
+static/
+
+# Other common junk
+*.bak
+*.backup
+*.tmp
+*.temp
+pip-log.txt
+pip-delete-this-directory.txt

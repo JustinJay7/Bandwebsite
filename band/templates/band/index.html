@@ -1,0 +1,39 @@
+{% extends 'band/base.html' %}
+{% load static %}
+
+{% block content %}
+<div class="hero-section">
+    <h1 class="display-4"><strong>Band Website</strong></h1>
+    <p class="lead"><strong>Experience the sound of the future</strong></p>
+    <a href="{% url 'band:music' %}" class="btn btn-primary btn-lg mt-3">Listen Now</a>
+</div>
+<div class="row">
+    <div class="col-md-4">
+        <div class="card h-100">
+            <div class="card-body text-center">
+                <h5 class="card-title">New Albums and Songs</h5>
+                <p class="card-text">Our latest album "Digital Dreams" is available and more</p>
+                <a href="{% url 'band:music' %}" class="btn btn-primary">View Albums & Songs</a>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="card h-100">
+            <div class="card-body text-center">
+                <h5 class="card-title">Upcoming Events</h5>
+                <p class="card-text">Coming to a city near you. Check out our upcoming shows.</p>
+                <a href="{% url 'band:about' %}" class="btn btn-primary">View Events</a> <a href = 'band:about'>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="card h-100">
+            <div class="card-body text-center">
+              <h5 class="card-title">Register and join our Community</h5>
+                <span class="card-text"><p>Sign up for exclusive content and early access to tickets.</span>
+               <a href="{% url 'band:signup' %}" class="btn btn-primary">Join Now</a>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

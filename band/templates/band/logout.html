@@ -1,0 +1,27 @@
+{% extends 'band/base.html' %}
+{% load static %}
+
+{% block content %}
+<div class="row justify-content-center">
+    <div class="col-md-6">
+        <div class="card auth-card">
+            <div class="card-header bg-dark text-center">
+                <h4 class="mb-0">Logged Out</h4>
+            </div>
+            <div class="card-body text-center">
+                <div class="mb-4">
+                    <i class="fas fa-sign-out-alt fa-3x text-primary"></i>
+                </div>
+                
+                <p class="lead">You have been successfully logged out.</p>
+                <p>Thank you for visiting The Band!</p>
+                
+                <div class="mt-4">
+                    <a href="{% url 'band:logout' %}" class="btn btn-primary me-2">Login Again</a>
+                    <a href="{% url 'band:index' %}" class="btn btn-outline-primary">Back to Home</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,58 @@
+{% extends 'band/base.html' %}
+{% load static %}
+
+{% block content %}
+<h2 class="mb-4">About The Band</h2>
+<p class="lead">The Band Project is an electronic rock band formed in 2020, known for their fusion of synthwave and alternative rock.</p>
+<p>“The reason this story is important to a successful band program is that everyone must contribute for us to reach our goal.  We can’t have people waiting around for everyone else to do the work.
+
+    You must do the work.
+    You must take your instrument home.
+    You must practice.
+    You must ask for help if you need it.
+    You must learn your part.
+    You must come prepared to rehearsal.
+    You must be on time.
+    You must pay attention.
+    You must have a good attitude.
+    You must work.  You.
+    
+    Not just the first chair player.  Or the second chair player.  You.
+    Not the person sitting to your right or your left.  You.
+    Not someone on the other side of this room.  You.
+    Not even this person on the podium.  I can't do it for you.
+    
+    You have to want it.
+    You have to work for it.
+    You have to earn it.
+    
+    No Work. No Reward.
+</p>
+<p> <strong>Hers is my 10 best in no particular order.</strong></p>
+
+    <p>1. Hashim-The soul</p>
+    <p>2. Unknown dj and 3 d-Beatronic</p>
+    <p>3. World class wrecking crew-Juice</p>
+    <p>4. Herbie hancock-Rock it</p>
+    <p>5. Newcleus-Computerage</p>
+    <p>6. Warp 9-Nunk</p>
+    <p>7. Mantronix and just ice-Put that record back on</p>
+    <p>8. Boogie Boys-Breakdancer</p>
+    <p>9. West street mob-Breakdance Electric Boogie</p>
+    <p>10. Kraftwerk-Numbers</p>
+
+<div class="row mt-5">
+    {% for member in members %}
+    <div class="col-md-4 mb-4">
+        <div class="card h-100 text-center">
+            <div class="card-body">
+                <img src="{% static 'band/images/background' %}{{ forloop.counter }}.jpg" alt="{{ member.name }}" class="member-image">
+                <h5 class="card-title">{{ member.name }}</h5>
+                <p class="text-muted">{{ member.role }}</p>
+                <p class="card-text">{{ member.bio }}</p>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+{% endblock %}

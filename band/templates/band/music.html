@@ -1,0 +1,44 @@
+{% extends 'band/base.html' %}
+{% load static %}
+
+{% block content %}
+<h2 class="mb-4">Our Music</h2>
+<p>Top 15:</p>
+
+<p>1. Afrika Bambaataa & The Soul Sonic Force - Looking For The Perfect Beat </p>
+<p>2. CD III - Success (Instrumental Dub)</p>
+<p>3. Fantasy Three - Biters In The City (Instrumental)</p>
+<p>4. Fantasy Three - It's Your Rock (Instrumental)</p>
+<p>5. Fearless Four - F4000</p>
+<p>6. Hashim - Al Naafiysh The Soul</p>
+<p>7. Hashim - We´re Rocking The Planet</p>
+<p>8. High Fidelity Three - B Boys Breakdance (Instrumental)</p>
+<p>9. Imperial Brothers - We Come To Dub</p>
+<p>10. Imperial Brothers - We Dub To Scratch</p>
+<p>11. Jazzy Jay - Def Jam</p>
+<p>12. Kid Nice - I Want You To Like It</p>
+<p>13. Planet Patrol - Play at Your Own Risk</p>
+<p>14. Strafe - Set It Off</p>
+<p>15. T La Rock - It's Yours</p>
+
+<div class="row">
+    {% for album in albums %}
+    <div class="col-md-6 mb-4">
+        <div class="card h-100">
+            <div class="row g-0">
+                <div class="col-md-4">
+                    <img src="{% static 'https://as2.ftcdn.net/jpg/01/37/86/09/1000_F_137860987_l1ifzqaBpSHLkARFF5v2GEbibK6tEfgp.jpg' %}{{ forloop.counter }}.jpg" class="img-fluid rounded-start" alt="{{ album.title }}">
+                </div>
+                <div class="col-md-8">
+                    <div class="card-body">
+                        <h5 class="card-title">{{ album.title }}</h5>
+                        <p class="text-muted">Released: {{ album.release_date }}</p>
+                        <p class="card-text">{{ album.description }}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+{% endblock %}
