@@ -1,44 +1,45 @@
 {% extends 'band/base.html' %}
-{% load static %}
+{% block title %}Music - BandWebsite{% endblock %}
 
 {% block content %}
-<h2 class="mb-4">Our Music</h2>
-<p>Top 15:</p>
+    <h1 class="text-center mb-5 text-orange">Our Music</h1>
 
-<p>1. Afrika Bambaataa & The Soul Sonic Force - Looking For The Perfect Beat </p>
-<p>2. CD III - Success (Instrumental Dub)</p>
-<p>3. Fantasy Three - Biters In The City (Instrumental)</p>
-<p>4. Fantasy Three - It's Your Rock (Instrumental)</p>
-<p>5. Fearless Four - F4000</p>
-<p>6. Hashim - Al Naafiysh The Soul</p>
-<p>7. Hashim - We´re Rocking The Planet</p>
-<p>8. High Fidelity Three - B Boys Breakdance (Instrumental)</p>
-<p>9. Imperial Brothers - We Come To Dub</p>
-<p>10. Imperial Brothers - We Dub To Scratch</p>
-<p>11. Jazzy Jay - Def Jam</p>
-<p>12. Kid Nice - I Want You To Like It</p>
-<p>13. Planet Patrol - Play at Your Own Risk</p>
-<p>14. Strafe - Set It Off</p>
-<p>15. T La Rock - It's Yours</p>
-
-<div class="row">
-    {% for album in albums %}
-    <div class="col-md-6 mb-4">
-        <div class="card h-100">
-            <div class="row g-0">
-                <div class="col-md-4">
-                    <img src="{% static 'https://as2.ftcdn.net/jpg/01/37/86/09/1000_F_137860987_l1ifzqaBpSHLkARFF5v2GEbibK6tEfgp.jpg' %}{{ forloop.counter }}.jpg" class="img-fluid rounded-start" alt="{{ album.title }}">
+    <div class="row justify-content-center">
+        <div class="col-lg-8">
+            <div class="card bg-Light mb-4">
+                <div class="card-body">
+                    <h3 class="text-orange">Midnight Storm (2022)</h3>
+                    <p>Our breakthrough full-length album – 12 tracks of raw energy.</p>
+                    <ul class="list-group list-group-flush bg-dark">
+                        <li class="list-group-item bg-dark text-white border-orange">1. Storm Rising</li>
+                        <li class="list-group-item bg-dark text-white border-orange">2. Echoes in the Dark</li>
+                        <li class="list-group-item bg-dark text-white border-orange">3. Fire Within</li>
+                        <li class="list-group-item bg-dark text-white border-orange">4. Stand String</li>
+                        <li class="list-group-item bg-dark text-white border-orange">5. Light Ray Toucj</li>
+                        <li class="list-group-item bg-dark text-white border-orange">6. Xeoni Fall</li>
+                        <li class="list-group-item bg-dark text-white border-orange">7. Like Numbers</li>
+                        <li class="list-group-item bg-dark text-white border-orange">8. Pages</li>
+                        <li class="list-group-item bg-dark text-white border-orange">9. Can't Stop</li>
+                    </ul>
                 </div>
-                <div class="col-md-8">
-                    <div class="card-body">
-                        <h5 class="card-title">{{ album.title }}</h5>
-                        <p class="text-muted">Released: {{ album.release_date }}</p>
-                        <p class="card-text">{{ album.description }}</p>
-                    </div>
+            </div>
+
+            <div class="card bg-Light">
+                <div class="card-body">
+                    <h3 class="text-orange">First Light EP (2020)</h3>
+                    <p>Our debut release that started it all.</p>
+                    <ul class="list-group list-group-flush bg-dark">
+                        <li class="list-group-item bg-dark text-white border-orange">1. Dawn</li>
+                        <li class="list-group-item bg-dark text-white border-orange">2. First Light</li>
+                        <li class="list-group-item bg-dark text-white border-orange">3. Storm Rising</li>
+                        <li class="list-group-item bg-dark text-white border-orange">4. Take Me Along</li>
+                        <li class="list-group-item bg-dark text-white border-orange">5. PEACE</li>
+                        <li class="list-group-item bg-dark text-white border-orange">6. Okay</li>
+                        <li class="list-group-item bg-dark text-white border-orange">7. D.Y.G.U</li>
+                        <li class="list-group-item bg-dark text-white border-orange">8. Together in the Light</li>
+                    </ul>
                 </div>
             </div>
         </div>
     </div>
-    {% endfor %}
-</div>
 {% endblock %}

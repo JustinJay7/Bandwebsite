@@ -1,0 +1,61 @@
+{% extends 'band/base.html' %}
+{% block title %}Home - BandWebsite{% endblock %}
+
+{% block content %}
+    <!-- Hero Slideshow -->
+    <div id="heroCarousel" class="carousel slide mb-5" data-bs-ride="carousel">
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img src="https://images.unsplash.com/photo-1501281668745-f7f57925c3b4?w=350"
+                class="d-block mx-auto rounded"
+                    style="height: 400px; object-fit: cover; border; 10px solid white;"
+                    alt="Band Live">
+            </div>
+            <div class="carousel-item">
+                <img src="https://images.unsplash.com/photo-1470225620780-dba8ba36b745?w=350"
+                class="d-block mx-auto rounded"
+                    style="height: 400px; object-fit: cover; border; 10px solid white;"
+                    alt="Stage">
+            </div>
+            <div class="carousel-item">
+                <img src="https://images.unsplash.com/photo-1514525253161-7a46d19cd819?w=350"
+                class="d-block mx-auto rounded"
+                    style="height: 400px; object-fit: cover; border; 10px solid white;"
+                    alt="Crowd">
+            </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#heroCarousel" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon"></span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#heroCarousel" data-bs-slide="next">
+            <span class="carousel-control-next-icon"></span>
+        </button>
+    </div>
+
+    <!-- Stats -->
+    <div class="row text-center mb-5">
+        <div class="col-md-4 mb-4">
+            <div class="stats-card">
+                <h3 class="text-orange">50+</h3>
+                <p>Cities Toured</p>
+            </div>
+        </div>
+        <div class="col-md-4 mb-4">
+            <div class="stats-card">
+                <h3 class="text-orange">3</h3>
+                <p>Studio Albums</p>
+            </div>
+        </div>
+        <div class="col-md-4 mb-4">
+            <div class="stats-card">
+                <h3 class="text-orange">1M+</h3>
+                <p>Monthly Listeners</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="text-center">
+        <h2 class="text-orange mb-4">Meet The Band</h2>
+        <a href="{% url 'band:about' %}" class="btn btn-orange btn-lg">Discover Our Story</a>
+    </div>
+{% endblock %}

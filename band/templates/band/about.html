@@ -1,58 +1,139 @@
 {% extends 'band/base.html' %}
-{% load static %}
+{% block title %}About - BandWebsite
+{% endblock %}
 
 {% block content %}
-<h2 class="mb-4">About The Band</h2>
-<p class="lead">The Band Project is an electronic rock band formed in 2020, known for their fusion of synthwave and alternative rock.</p>
-<p>“The reason this story is important to a successful band program is that everyone must contribute for us to reach our goal.  We can’t have people waiting around for everyone else to do the work.
+    <!-- Slideshow -->
+    <div id="aboutCarousel" class="carousel slide mb-5" data-bs-ride="carousel">
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img src="https://images.unsplash.com/photo-1501612780327-45045538702b?w=400" class="d-block w-70 mx-auto rounded" alt="Band Photo 1">
+            </div>
+            <div class="carousel-item">
+                <img src="https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?w=400" class="d-block w-70 mx-auto rounded" alt="Band Photo 2">
+            </div>
+            <div class="carousel-item">
+                <img src="https://images.unsplash.com/photo-1470225620780-dba8ba36b745?w=400" class="d-block w-70 mx-auto rounded" alt="Band Photo 3">
+            </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#aboutCarousel" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon"></span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#aboutCarousel" data-bs-slide="next">
+            <span class="carousel-control-next-icon"></span>
+        </button>
+    </div>
 
-    You must do the work.
-    You must take your instrument home.
-    You must practice.
-    You must ask for help if you need it.
-    You must learn your part.
-    You must come prepared to rehearsal.
-    You must be on time.
-    You must pay attention.
-    You must have a good attitude.
-    You must work.  You.
-    
-    Not just the first chair player.  Or the second chair player.  You.
-    Not the person sitting to your right or your left.  You.
-    Not someone on the other side of this room.  You.
-    Not even this person on the podium.  I can't do it for you.
-    
-    You have to want it.
-    You have to work for it.
-    You have to earn it.
-    
-    No Work. No Reward.
-</p>
-<p> <strong>Hers is my 10 best in no particular order.</strong></p>
+    <!-- Our Story -->
+    <div class="row justify-content-center mb-5">
+        <div class="col-lg-10">
+            <h2 class="text-center text-orange mb-4">Our Story</h2>
+            <p class="lead text-center">
+                Born in a small garage in 2018, our band started with a simple dream: to create music that moves people. 
+                What began as weekend jam sessions between four friends quickly evolved into something much bigger.
+            </p>
+            <p>
+                Our debut EP "First Light" caught the attention of music enthusiasts worldwide, propelling us from local venues 
+                to international stages. Today, we continue to push boundaries and explore new sonic territories.
+            </p>
+        </div>
+    </div>
 
-    <p>1. Hashim-The soul</p>
-    <p>2. Unknown dj and 3 d-Beatronic</p>
-    <p>3. World class wrecking crew-Juice</p>
-    <p>4. Herbie hancock-Rock it</p>
-    <p>5. Newcleus-Computerage</p>
-    <p>6. Warp 9-Nunk</p>
-    <p>7. Mantronix and just ice-Put that record back on</p>
-    <p>8. Boogie Boys-Breakdancer</p>
-    <p>9. West street mob-Breakdance Electric Boogie</p>
-    <p>10. Kraftwerk-Numbers</p>
-
-<div class="row mt-5">
-    {% for member in members %}
-    <div class="col-md-4 mb-4">
-        <div class="card h-100 text-center">
-            <div class="card-body">
-                <img src="{% static 'band/images/background' %}{{ forloop.counter }}.jpg" alt="{{ member.name }}" class="member-image">
-                <h5 class="card-title">{{ member.name }}</h5>
-                <p class="text-muted">{{ member.role }}</p>
-                <p class="card-text">{{ member.bio }}</p>
+    <!-- Member Profiles -->
+    <h3 class="text-center text-orange mb-4">Meet The Band</h3>
+    <div class="row text-center">
+        <div class="col-md-6 col-lg-3 mb-4">
+            <div class="card bg-dark border-orange">
+                <div class="card-body">
+                    <div class="mb-3">
+                        <div class="bg-orange rounded-circle mx-auto d-flex align-items-center justify-content-center" style="width:100px;height:100px;">
+                            <span class="fs-1 text-dark">🎤</span>
+                        </div>
+                    </div>
+                    <h5 class="card-title text-orange">Jake Morrison</h5>
+                    <p class="card-text">Lead Vocals</p>
+                    <p class="small">The voice that ignites stadiums.</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6 col-lg-3 mb-4">
+            <div class="card bg-dark border-orange">
+                <div class="card-body">
+                    <div class="mb-3">
+                        <div class="bg-orange rounded-circle mx-auto d-flex align-items-center justify-content-center" style="width:100px;height:100px;">
+                            <span class="fs-1 text-dark">🎤</span>
+                        </div>
+                    </div>
+                    <h5 class="card-title text-orange">Alex Turner</h5>
+                    <p class="card-text">Lead Guitar</p>
+                    <p class="small">Master of the six-string riffs.</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6 col-lg-3 mb-4">
+            <div class="card bg-dark border-orange">
+                <div class="card-body">
+                    <div class="mb-3">
+                        <div class="bg-orange rounded-circle mx-auto d-flex align-items:center justify-content:center" style="width:100px;height:100px;">
+                            <span class="fs-1 text-dark">🎸</span>
+                        </div>
+                    </div>
+                    <h5 class="card-title text-orange">Sam Rivers</h5>
+                    <p class="card-text">Bass Guitar</p>
+                    <p class="small">The groove master.</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6 col-lg-3 mb-4">
+            <div class="card bg-dark border-orange">
+                <div class="card-body">
+                    <div class="mb-3">
+                        <div class="bg-orange rounded-circle mx-auto d-flex align-items:center justify-content:center" style="width:100px;height:100px;">
+                            <span class="fs-1 text-dark">🥁</span>
+                        </div>
+                    </div>
+                    <h5 class="card-title text-orange">Chris Blake</h5>
+                    <p class="card-text">Drums</p>
+                    <p class="small">The heartbeat of the band.</p>
+                </div>
             </div>
         </div>
     </div>
-    {% endfor %}
-</div>
+
+    <!-- Timeline -->
+    <h3 class="text-center text-orange mt-5 mb-4">Our Journey</h3>
+    <div class="row justify-content-center">
+        <div class="col-lg-8">
+            <ul class="list-unstyled">
+                <li class="mb-4 position-relative">
+                    <div class="timeline-badge bg-orange">1</div>
+                    <div class="timeline-panel bg-dark p-4 rounded">
+                        <h5 class="text-orange">2018 – Band Formation</h5>
+                        <p>Four musicians unite in a garage with a shared vision.</p>
+                    </div>
+                </li>
+                <li class="mb-4 position-relative">
+                    <div class="timeline-badge bg-orange">2</div>
+                    <div class="timeline-panel bg-dark p-4 rounded">
+                        <h5 class="text-orange">2019 – First Live Show</h5>
+                        <p>Debut performance sold out in hours.</p>
+                    </div>
+                </li>
+                <li class="mb-5 position-relative">
+                    <div class="timeline-badge bg-orange">3</div>
+                    <div class="timeline-panel bg-dark p-4 rounded">
+                        <h5 class="text-orange">2020 – First Light EP</h5>
+                        <p>Reached #15 on indie charts worldwide.</p>
+                    </div>
+                </li>
+                <li class="mb-4 position-relative">
+                    <div class="timeline-badge bg-orange">4</div>
+                    <div class="timeline-panel bg-dark p-4 rounded">
+                        <h5 class="text-orange">2022 – Midnight Storm Album</h5>
+                        <p>Went platinum worldwide.</p>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
 {% endblock %}

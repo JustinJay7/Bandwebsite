@@ -1,43 +1,42 @@
 from django.shortcuts import render, redirect
-from django.contrib.auth import login, authenticate, logout as auth_logout
-from django.contrib.auth.forms import AuthenticationForm
-from django.contrib.auth.decorators import login_required
-from .forms import RegistrationForm
+from django.contrib.auth import authenticate, login, logout
+from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
+from django.contrib import messages
 
-def index(request):
-    return render(request, 'band/index.html')
-
-def about(request):
-    return render(request, 'band/about.html')
+def home(request):
+    return render(request, 'band/home.html')
 
 def music(request):
     return render(request, 'band/music.html')
 
-def signup(request):
-    if request.method == 'POST':
-        form = RegistrationForm(request.POST)
-        if form.is_valid():
-            user = form.save()
-            username = form.cleaned_data.get('username')
-            raw_password = form.cleaned_data.get('password1')
-            user = authenticate(username=username, password=raw_password)
-            login(request, user)
-            return redirect('band:index')
-    else:
-        form = RegistrationForm()
-    return render(request, 'band/signup.html', {'form': form})
+def about(request):
+    return render(request, 'band/about.html')
 
-def user_login(request):
+def login_view(request):
     if request.method == 'POST':
-        form = AuthenticationForm(data=request.POST)  # Fixed: Use AuthenticationForm for login
+        form = AuthenticationForm(request, data=request.POST)
         if form.is_valid():
             user = form.get_user()
             login(request, user)
-            return redirect('band:index')
+            messages.success(request, "Logged in successfully!")
+            return redirect('band:home')
     else:
         form = AuthenticationForm()
     return render(request, 'band/login.html', {'form': form})
 
-def user_logout(request):
-    auth_logout(request)  # Fixed: Proper logout implementation
-    return redirect('band:index')
+def signup(request):
+    if request.method == 'POST':
+        form = UserCreationForm(request.POST)
+        if form.is_valid():
+            user = form.save()
+            login(request, user)
+            messages.success(request, "Account created! You're now logged in.")
+            return redirect('band:home')
+    else:
+        form = UserCreationForm()
+    return render(request, 'band/signup.html', {'form': form})
+
+def logout_view(request):
+    logout(request)
+    messages.success(request, "Logged out successfully.")
+    return redirect('band:home')
